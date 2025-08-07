@@ -1,7 +1,6 @@
-# frequency_best_time.py
-
+#data initiliazes the empty list 
 data = []
-
+#collects the data from the users 
 def enter_availability():
     print("Enter participant availability data")
     while True:
@@ -16,7 +15,7 @@ def enter_availability():
             'worst_times': [t.strip() for t in worst_times.split(',')]
         }
         data.append(participant)
-
+#counts how often each time is mentioned
 def calculate_best_time():
     time_counter = {}
 
@@ -29,11 +28,11 @@ def calculate_best_time():
         print(f"\nChosen Meeting Time: {best_time} with {time_counter[best_time]} vote(s)")
     else:
         print("No best times were given")
-
+#collects the availibities and calculates and displays the most popular time that was picked the most often
 def main():
     print("=== Frequency-Based Meeting Time Picker ===")
     enter_availability()
     calculate_best_time()
-
+#calls the main function when you run the file 
 if __name__ == "__main__":
     main()
